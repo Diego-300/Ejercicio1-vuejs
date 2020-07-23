@@ -1,0 +1,51 @@
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>   
+<div id='app-1'>
+    
+    <button v-on:click="func1">Mostrar Nombre</button>
+    
+    <button v-on:click="func2">Mostrar Edad</button>
+    
+    <button v-on:click="func3">Mostrar Deportes</button>
+    
+
+    <div v-if="bandera1">{{persona.nombre}}</div>
+    
+    <div v-if="bandera2">{{persona.edad}}</div>
+    
+    <div v-if="bandera3">{{persona.deportes}}</div>
+       
+</div>
+
+<script>
+
+var app = new Vue ({
+    el: '#app-1',
+    data: {
+      persona :{
+        'nombre': 'Diego',
+        'edad': 18,
+        'deportes':['futbol','taekwondo','rugby']
+    },
+       bandera1 : false,
+       bandera2 : false,
+       bandera3 : false,       
+    },
+    methods:{
+      func1: function () {
+      this.bandera1= !this.bandera1
+    },
+    func2: function () {
+      this.bandera2=!this.bandera2
+    },
+    func3: function (){
+      this.bandera3=!this.bandera3
+    }
+}
+  
+})
+
+</script>
+
+
+
+
